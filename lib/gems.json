@@ -1,0 +1,27 @@
+[
+  {
+    "name": "haml-rails",
+    "prompt": "Do you want to use haml views instead of erb? [Y/N]",
+    "sub_prompts": [
+      {
+        "message": "Convert all existing view files to haml? [Y/N]",
+        "post_install_commands:": [
+          "HAML_RAILS_DELETE_ERB=true rails haml:erb2haml"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "better_errors",
+    "gem_groups": ["development"],
+    "prompt": "Do you want to use better errors to view errors on the browser? [Y/N]",
+    "sub_prompts": [
+      {
+        "message": "Do you want to use advanced features like REPL, local/instance variable inspection and pretty stack frame names? [Y/N]",
+        "pre_install_commands:": [
+          "bundle add binding_of_caller --group 'development'"
+        ]
+      }
+    ]
+  }
+]
