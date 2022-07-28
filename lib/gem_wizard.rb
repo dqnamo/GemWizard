@@ -39,15 +39,9 @@ class GemWizard
 
   #----- where the magic happens -----#
   def self.gemify!
-    @pre_install_commands.each do |command|
-      system(command)
-    end
-
+    @pre_install_commands.each { |command| system(command) }
     system('bundle install')
-
-    @post_install_commands.each do |command|
-      system(command)
-    end
+    @post_install_commands.each { |command| system(command) }
   end
 
   #----- helper methods -----#
